@@ -40,7 +40,7 @@ embeddings, dimension = load_embedding_model(
     logger=BaseLogger(),
 )
 
-# if Neo4j is local, you can go to http://localhost:7474/ to browse the database
+# if Neo4j is local, you can go to http://localhost:7474/ to browse the base
 neo4j_graph = Neo4jGraph(
     url=url, username=username, password=password, refresh_schema=False
 )

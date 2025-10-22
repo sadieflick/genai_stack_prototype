@@ -20,7 +20,7 @@ os.environ["NEO4J_URL"] = url
 
 logger = get_logger(__name__)
 
-so_api_base_url = "https://api.stackexchange.com/2.3/search/advanced"
+# so_api_base_url = "https://api.stackexchange.com/2.3/search/advanced"
 
 embeddings, dimension = load_embedding_model(
     embedding_model_name, config={"ollama_base_url": ollama_base_url}, logger=logger
@@ -30,6 +30,7 @@ embeddings, dimension = load_embedding_model(
 neo4j_graph = Neo4jGraph(
     url=url, username=username, password=password, refresh_schema=False
 )
+
 
 create_constraints(neo4j_graph)
 create_vector_index(neo4j_graph)
